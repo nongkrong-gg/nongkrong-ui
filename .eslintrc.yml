@@ -1,0 +1,20 @@
+env:
+  browser: true
+  es2021: true
+extends: airbnb
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+settings:
+  import/resolver:
+    node:
+      paths:
+        - src
+rules:
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+      - .js
+      - .jsx
+  react/react-in-jsx-scope: off
+  react/jsx-uses-react: off

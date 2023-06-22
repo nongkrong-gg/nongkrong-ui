@@ -18,3 +18,4 @@ rules:
       - .jsx
   react/react-in-jsx-scope: off
   react/jsx-uses-react: off
+  react/forbid-prop-types: 0

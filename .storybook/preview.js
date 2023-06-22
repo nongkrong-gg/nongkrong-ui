@@ -1,3 +1,7 @@
+import 'normalize.css/normalize.css';
+import 'utilities/reset.css';
+import 'utilities/index.scss';
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {

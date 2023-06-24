@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   uniqueNamesGenerator,
@@ -22,6 +22,7 @@ function Input({
   const [seePassword, setSeePassword] = useState(false);
   const [value, setValue] = useState('');
   const [isValid, setIsValid] = useState(false);
+  const inputRef = useRef(null);
   const toggleSeePassword = () => {
     setSeePassword((prevState) => !prevState);
     setInputType((prevState) => {
@@ -39,6 +40,10 @@ function Input({
     setValue(uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] }));
   };
 
+  const openDatePicker = () => {
+    inputRef.current.showPicker();
+  };
+
   useEffect(() => {
     setIsValid(false);
     setIsValid(!validate(name, value).error);
@@ -53,7 +58,10 @@ function Input({
   return (
     <div className={classes.input}>
       <input
-        className={`${secondary ? classes.secondary : ''} ${classes[type]} ${validClassName()}`}
+        ref={inputRef}
+        className={
+          `${secondary ? classes.secondary : ''} ${value ? classes.empty : ''} ${validClassName()}`
+        }
         type={inputType}
         id={id}
         name={name}
@@ -76,6 +84,18 @@ function Input({
             </div>
           )}
         </>
+      )}
+      {name === 'date' && (
+        <i
+          className={`fa-solid fa-calendar ${classes['icon-right']}`}
+          onClick={openDatePicker}
+        />
+      )}
+      {name === 'time' && (
+        <i
+          className={`fa-solid fa-clock ${classes['icon-right']}`}
+          onClick={openDatePicker}
+        />
       )}
       {type === 'password' && (
         <>

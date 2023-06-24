@@ -5,6 +5,14 @@ export default {
   title: 'Input',
 };
 
+export const Text = {
+  args: {
+    type: 'text',
+    name: 'title',
+    placeholder: 'Tema wacananya apa?',
+  },
+};
+
 export const Email = {
   args: {
     type: 'email',
@@ -29,5 +37,21 @@ export const Password = {
     type: 'password',
     name: 'password',
     placeholder: 'Passwordin yuk, biar aman',
+  },
+};
+
+export const Date = {
+  args: {
+    secondary: true,
+    type: 'date',
+    name: 'date',
+  },
+};
+
+export const Time = {
+  args: {
+    secondary: true,
+    type: 'time',
+    name: 'time',
   },
 };

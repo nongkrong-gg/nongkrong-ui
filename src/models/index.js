@@ -9,11 +9,17 @@ const username = Joi.string()
 const password = Joi.string()
   .pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
   .required();
+const date = Joi.date().greater('now').required();
+const time = Joi.string().regex(/^([0-9]{2}):([0-9]{2})$/);
+const title = Joi.string().min(3).max(30).required();
 
 const models = {
   email,
   username,
   password,
+  date,
+  time,
+  title,
 };
 
 // eslint-disable-next-line

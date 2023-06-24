@@ -18,6 +18,16 @@
       color: colors.$form-empty-placeholder;
     }
 
+    &[type="date"], &[type="time"] {
+      &::-webkit-datetime-edit {
+        color: colors.$form-empty-placeholder;
+      }
+
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+    }
+
     & + i {
       color: colors.$form-empty-placeholder;
 
@@ -28,11 +38,6 @@
 
     &.secondary {
       background-color: colors.$form-secondary-bg;
-    }
-
-    &.password {
-      padding-left: 16px;
-      padding-right: 48px;
     }
 
     &:focus {
@@ -48,7 +53,7 @@
       }
     }
 
-    &:not(:placeholder-shown) {
+    &.empty {
       border-color: colors.$form-filled-border;
 
       & + i {
@@ -64,6 +69,12 @@
       border-color: colors.$form-success-border;
       color: colors.$form-success-text;
 
+      &[type="date"], &[type="time"] {
+        &::-webkit-datetime-edit {
+          color: colors.$form-success-text;
+        }
+      }
+
       & + i {
         color: colors.$form-success-text;
 
@@ -76,6 +87,12 @@
     &.invalid {
       border-color: colors.$form-error-border;
       color: colors.$form-error-text;
+
+      &[type="date"], &[type="time"] {
+        &::-webkit-datetime-edit {
+          color: colors.$form-error-text;
+        }
+      }
 
       & + i {
         color: colors.$form-error-text;
@@ -119,6 +136,13 @@
     }
   }
 
+  &:not(:has(> .icon-left)) {
+    input {
+      padding-left: 16px;
+      padding-right: 48px;
+    }
+  }
+
   &:has(> .toast) {
     background-color: colors.$form-normal-toast-bg;
     border-radius: 16px;
@@ -129,4 +153,3 @@
     border-radius: 16px;
   }
 }
-

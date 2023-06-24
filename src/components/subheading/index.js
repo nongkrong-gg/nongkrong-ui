@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import './style.module.scss';
+import classes from './style.module.scss';
 
 function Subheading({
   children,
 }) {
   return (
-    <h3>{children}</h3>
+    <h3 className={classes.h3}>{children}</h3>
   );
 }
 

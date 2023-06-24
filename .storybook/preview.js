@@ -13,6 +13,9 @@ const preview = {
         date: /Date$/,
       },
     },
+    viewport: {
+      defaultViewport: 'mobile2',
+    },
   },
 };
 

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import './style.module.scss';
+import classes from './style.module.scss';
 
 function Heading({
   children,
 }) {
   return (
-    <h1>{children}</h1>
+    <h1 className={classes.h1}>{children}</h1>
   );
 }
 

@@ -23,7 +23,7 @@ function Button({
     <button
       type={type}
       onClick={onClick}
-      className={classes[variant()]}
+      className={`${classes.button} ${classes[variant()]}`}
       disabled={disabled}
     >
       {iconLeft && (
@@ -31,7 +31,7 @@ function Button({
       )}
       {children}
       {iconRight && (
-        <i className={`fa-solid fa-${iconRight} ${classes['right-icon']}`} />
+        <i className={`fa-solid fa-${iconRight}`} />
       )}
     </button>
   );

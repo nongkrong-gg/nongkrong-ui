@@ -1,0 +1,132 @@
+@use 'utilities/colors';
+
+.input {
+  position: relative;
+
+  input {
+    width: calc(100% - 68px);
+    padding: 14px 16px;
+    padding-left: 48px;
+    border-radius: 16px;
+    border: 2px solid colors.$form-empty-border;
+    border-radius: 16px;
+    color: colors.$form-filled-text;
+    font-size: 14px;
+    line-height: 20px;
+
+    &::placeholder {
+      color: colors.$form-empty-placeholder;
+    }
+
+    & + i {
+      color: colors.$form-empty-placeholder;
+
+      & + i {
+        color: colors.$form-empty-placeholder;
+      }
+    }
+
+    &.secondary {
+      background-color: colors.$form-secondary-bg;
+    }
+
+    &.password {
+      padding-left: 16px;
+      padding-right: 48px;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: colors.$form-filled-border;
+
+      & + i {
+        color: colors.$form-filled-text;
+
+        & + i {
+          color: colors.$form-filled-text;
+        }
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      border-color: colors.$form-filled-border;
+
+      & + i {
+        color: colors.$form-filled-text;
+
+        & + i {
+          color: colors.$form-filled-text;
+        }
+      }
+    }
+
+    &.valid {
+      border-color: colors.$form-success-border;
+      color: colors.$form-success-text;
+
+      & + i {
+        color: colors.$form-success-text;
+
+        & + i {
+          color: colors.$form-success-text;
+        }
+      }
+    }
+
+    &.invalid {
+      border-color: colors.$form-error-border;
+      color: colors.$form-error-text;
+
+      & + i {
+        color: colors.$form-error-text;
+
+        & + i {
+          color: colors.$form-error-text;
+        }
+      }
+    }
+  }
+
+  i {
+    &.icon-left {
+      position: absolute;
+      top: 18px;
+      left: 16px;
+    }
+
+    &.icon-right, &.icon-password {
+      position: absolute;
+      top: 18px;
+      right: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .toast {
+    background-color: colors.$form-normal-toast-bg;
+    color: colors.$form-normal-toast-text;
+    border-radius: 0 0 16px 16px;
+    padding: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    &.success {
+      background-color: colors.$form-success-toast-bg;
+      color: colors.$form-success-toast-text;
+    }
+  }
+
+  &:has(> .toast) {
+    background-color: colors.$form-normal-toast-bg;
+    border-radius: 16px;
+  }
+
+  &:has(> .toast.success) {
+    background-color: colors.$form-success-toast-bg;
+    border-radius: 16px;
+  }
+}
+

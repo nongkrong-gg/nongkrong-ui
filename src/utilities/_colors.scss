@@ -6,6 +6,7 @@ $lighter-gray: #F8F9FB;
 $green: #006781;
 $neon-green: #219653;
 $red: #DF5C48;
+$neon-red: #BA1A1A;
 $light-blue: #DEF4FF;
 
 /* FORM */
@@ -13,12 +14,20 @@ $form-empty-placeholder: #70787C;
 $form-empty-border: $lighter-gray;
 $form-empty-toast-bg: $lighter-gray;
 $form-empty-toast-text: #D8DADC;
+$form-secondary-bg: $lighter-gray;
+$form-filled-bg: $lighter-gray;
 $form-filled-border: $green;
 $form-filled-text: $green;
+$form-normal-toast-bg: #F8F9FB;
+$form-normal-toast-text: #D8DADC;
+$form-success-toast-bg: #6FCF97;
 $form-success-border: $neon-green;
 $form-success-text: $neon-green;
-$form-success-toast-bg: #6FCF97;
 $form-success-toast-text: $neon-green;
+$form-error-toast-bg: #FFDAD6;
+$form-error-border: $neon-red;
+$form-error-text: $neon-red;
+$form-error-toast-text: $neon-red;
 
 /* BUTTON */
 $button-primary-bg: $green;

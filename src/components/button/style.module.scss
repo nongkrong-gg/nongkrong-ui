@@ -1,0 +1,50 @@
+@use 'utilities/colors';
+
+button {
+  padding: 16px;
+  text-align: center;
+  border-radius: 100px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.primary {
+    background-color: colors.$button-primary-bg;
+    color: colors.$button-primary-text;
+    border: 0;
+  }
+
+  &.secondary {
+    background-color: colors.$button-secondary-bg;
+    color: colors.$button-secondary-text;
+    border: colors.$button-secondary-border 1px solid;
+  }
+
+  &.tertiary {
+    background-color: colors.$button-tertiary-bg;
+    color: colors.$button-tertiary-text;
+    border: colors.$button-tertiary-border 1px solid;
+  }
+
+  &:disabled {
+    background-color: colors.$button-disabled-bg;
+    color: colors.$button-disabled-text;
+    border: colors.$button-disabled-border 1px solid;
+    cursor: not-allowed;
+  }
+
+  img[alt="left icon"] {
+    position: absolute;
+    left: 16px;
+  }
+
+  i.right-icon {
+    margin-left: 8px;
+  }
+}

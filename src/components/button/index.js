@@ -1,0 +1,64 @@
+import PropTypes from 'prop-types';
+import classes from './style.module.scss';
+
+function Button({
+  children,
+  type,
+  onClick,
+  primary,
+  secondary,
+  tertiary,
+  disabled,
+  iconLeft,
+  iconRight,
+}) {
+  const variant = () => {
+    if (primary) return 'primary';
+    if (secondary) return 'secondary';
+    if (tertiary) return 'tertiary';
+    return '';
+  };
+
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      className={classes[variant()]}
+      disabled={disabled}
+    >
+      {iconLeft && (
+        <img src={iconLeft} alt="left icon" />
+      )}
+      {children}
+      {iconRight && (
+        <i className={`fa-solid fa-${iconRight} ${classes['right-icon']}`} />
+      )}
+    </button>
+  );
+}
+
+Button.propTypes = {
+  children: PropTypes.any,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  onClick: PropTypes.func,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  tertiary: PropTypes.bool,
+  disabled: PropTypes.bool,
+  iconLeft: PropTypes.string,
+  iconRight: PropTypes.string,
+};
+
+Button.defaultProps = {
+  children: null,
+  type: 'button',
+  onClick: () => {},
+  primary: false,
+  secondary: false,
+  tertiary: false,
+  disabled: false,
+  iconLeft: '',
+  iconRight: '',
+};
+
+export default Button;

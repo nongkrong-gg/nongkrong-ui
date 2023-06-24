@@ -1,7 +1,8 @@
 $black: #000000;
 $white: #FFFFFF;
 $gray: #A9ABAD;
-$light-gray: #F8F9FB;
+$light-gray: #E1E3E4;
+$lighter-gray: #F8F9FB;
 $green: #006781;
 $neon-green: #219653;
 $red: #DF5C48;
@@ -9,19 +10,26 @@ $light-blue: #DEF4FF;
 
 /* FORM */
 $form-empty-placeholder: #70787C;
-$form-empty-border: $light-gray;
-$form-empty-toast-bg: $light-gray;
+$form-empty-border: $lighter-gray;
+$form-empty-toast-bg: $lighter-gray;
 $form-empty-toast-text: #D8DADC;
-
-$form-focus-border: var($green);
-$form-focus-text: var($green);
-
+$form-filled-border: $green;
+$form-filled-text: $green;
 $form-success-border: $neon-green;
 $form-success-text: $neon-green;
 $form-success-toast-bg: #6FCF97;
 $form-success-toast-text: $neon-green;
 
 /* BUTTON */
-$button-primary-bg: var($green);
-$button-primary-text: var($white);
-$button-primary-disabled-bg: #E1E3E4;
+$button-primary-bg: $green;
+$button-primary-border: 0;
+$button-primary-text: $white;
+$button-secondary-bg: $white;
+$button-secondary-border: $white;
+$button-secondary-text: $green;
+$button-tertiary-bg: $white;
+$button-tertiary-border: $black;
+$button-tertiary-text: $black;
+$button-disabled-bg: $light-gray;
+$button-disabled-border: $light-gray;
+$button-disabled-text: $white;

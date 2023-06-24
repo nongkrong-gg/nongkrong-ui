@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from 'App.js';
 import 'normalize.css/normalize.css';
 import 'utilities/reset.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'utilities/index.scss';
 import reportWebVitals from './reportWebVitals';
 

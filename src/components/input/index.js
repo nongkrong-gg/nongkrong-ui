@@ -17,10 +17,13 @@ function Input({
   placeholder,
   icon,
   info,
+  infoInput,
+  infoIcon,
 }) {
   const [inputType, setInputType] = useState(type);
   const [seePassword, setSeePassword] = useState(false);
   const [value, setValue] = useState('');
+  const [subValue, setSubValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const inputRef = useRef(null);
   const toggleSeePassword = () => {
@@ -60,7 +63,7 @@ function Input({
       <input
         ref={inputRef}
         className={
-          `${secondary ? classes.secondary : ''} ${value ? classes.empty : ''} ${validClassName()}`
+          `${secondary ? classes.secondary : ''} ${value ? classes.filled : ''} ${validClassName()}`
         }
         type={inputType}
         id={id}
@@ -113,7 +116,18 @@ function Input({
       )}
       {info && (
         <div className={classes.toast}>
-          {info}
+          {infoIcon && (
+            <i className={`fa-solid fa-${infoIcon}`} />
+          )}
+          {infoInput ? (
+            <input
+              className={subValue ? classes.filled : ''}
+              name={infoInput}
+              placeholder={info}
+              value={subValue}
+              onChange={(e) => setSubValue(e.target.value)}
+            />
+          ) : info}
         </div>
       )}
     </div>
@@ -128,6 +142,8 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   icon: PropTypes.string,
   info: PropTypes.string,
+  infoInput: PropTypes.string,
+  infoIcon: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -138,6 +154,8 @@ Input.defaultProps = {
   placeholder: '',
   icon: '',
   info: '',
+  infoInput: '',
+  infoIcon: '',
 };
 
 export default Input;

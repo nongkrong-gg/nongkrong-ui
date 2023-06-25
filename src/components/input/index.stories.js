@@ -10,6 +10,9 @@ export const Text = {
     type: 'text',
     name: 'title',
     placeholder: 'Tema wacananya apa?',
+    info: 'Tambahin detail (optional)',
+    infoInput: 'description',
+    infoIcon: 'file-lines',
   },
 };
 

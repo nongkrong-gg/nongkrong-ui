@@ -53,7 +53,7 @@
       }
     }
 
-    &.empty {
+    &.filled {
       border-color: colors.$form-filled-border;
 
       & + i {
@@ -130,9 +130,38 @@
     gap: 8px;
     align-items: center;
 
+    input {
+      width: 100%;
+      background-color: colors.$form-normal-toast-bg;
+      color: colors.$black;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0 !important;
+      border-radius: 0;
+
+      &::placeholder {
+        color: colors.$form-normal-toast-text;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: transparent;
+      }
+
+      &.filled {
+        border-color: transparent;
+      }
+    }
+
     &.success {
       background-color: colors.$form-success-toast-bg;
       color: colors.$form-success-toast-text;
+    }
+
+    &:has(> input.filled) {
+      i {
+        color: colors.$black;
+      }
     }
   }
 

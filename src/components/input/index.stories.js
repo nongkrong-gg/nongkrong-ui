@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Input from './index';
 
 export default {
@@ -5,56 +6,83 @@ export default {
   title: 'Input',
 };
 
+function InputComponent(props) {
+  const [value, setValue] = useState('');
+  const [subValue, setSubValue] = useState('');
+
+  return (
+    <Input
+      value={value}
+      subValue={subValue}
+      setValue={setValue}
+      setSubValue={setSubValue}
+      {...props}
+    />
+  );
+}
+
 export const Text = {
-  args: {
-    type: 'text',
-    name: 'title',
-    placeholder: 'Tema wacananya apa?',
-    info: 'Tambahin detail (optional)',
-    infoInput: 'description',
-    infoIcon: 'file-lines',
-  },
+  render: () => (
+    <InputComponent
+      type="text"
+      name="title"
+      placeholder="Tema wacananya apa?"
+      info="Tambahin detail (optional)"
+      infoInput="description"
+      infoIcon="file-lines"
+    />
+  ),
 };
 
 export const Email = {
-  args: {
-    type: 'email',
-    name: 'email',
-    placeholder: 'email kamu apa?',
-    icon: 'envelope',
-  },
+  render: () => (
+    <InputComponent
+      type="email"
+      name="email"
+      placeholder="email kamu apa?"
+      icon="envelope"
+    />
+  ),
 };
 
 export const Username = {
-  args: {
-    secondary: true,
-    type: 'text',
-    name: 'username',
-    placeholder: 'siapa nama kamu?',
-    icon: 'user',
-  },
+  render: () => (
+    <InputComponent
+      secondary
+      type="text"
+      name="username"
+      placeholder="siapa nama kamu?"
+      icon="user"
+    />
+  ),
 };
 
 export const Password = {
-  args: {
-    type: 'password',
-    name: 'password',
-    placeholder: 'Passwordin yuk, biar aman',
-  },
+  render: () => (
+    <InputComponent
+      type="password"
+      name="password"
+      placeholder="Passwordin yuk, biar aman"
+    />
+  ),
 };
 
 export const Date = {
-  args: {
-    secondary: true,
-    type: 'date',
-    name: 'date',
-  },
+  render: () => (
+    <InputComponent
+      secondary
+      type="date"
+      name="date"
+    />
+  ),
 };
 
 export const Time = {
-  args: {
-    secondary: true,
-    type: 'time',
-    name: 'time',
-  },
+  render: () => (
+    <InputComponent
+      secondary
+      type="time"
+      name="time"
+    />
+  ),
 };

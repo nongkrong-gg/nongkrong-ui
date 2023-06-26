@@ -1,7 +1,8 @@
 import 'normalize.css/normalize.css';
 import 'utilities/reset.css';
-import 'utilities/index.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@splidejs/react-splide/css';
+import 'utilities/index.scss';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {

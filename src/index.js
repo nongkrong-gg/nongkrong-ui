@@ -4,6 +4,7 @@ import App from 'App.js';
 import 'normalize.css/normalize.css';
 import 'utilities/reset.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@splidejs/react-splide/dist/css/splide.min.css';
 import 'utilities/index.scss';
 import reportWebVitals from './reportWebVitals';
 

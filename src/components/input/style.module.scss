@@ -19,12 +19,17 @@
     }
 
     &[type="date"], &[type="time"] {
+      appearance: none;
+      -webkit-appearance: none;
+
       &::-webkit-datetime-edit {
         color: colors.$form-empty-placeholder;
       }
 
-      &::-webkit-calendar-picker-indicator {
+      &::-webkit-inner-spin-button, &::-webkit-calendar-picker-indicator {
         display: none;
+        appearance: none;
+        -webkit-appearance: none;
       }
     }
 

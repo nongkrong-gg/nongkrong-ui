@@ -1,5 +1,73 @@
+@use 'utilities/colors';
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
 body {
   font-family: 'Rubik', sans-serif;
+}
+
+/* Splide */
+.splide__slide {
+  &:focus-visible, &:focus {
+    outline: none !important;
+  }
+
+  img {
+    &:focus-visible {
+      outline: none !important;
+    }
+  }
+
+  &.is-active {
+    border: 3px solid transparent !important;
+  }
+
+  &:not(.is-active) {
+    filter: grayscale(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+
+.splide__track {
+  min-height: 166px;
+}
+
+.splide__arrows {
+  position: relative;
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+
+  .splide__arrow {
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: none;
+    background-color: colors.$green;
+    color: colors.$white;
+    opacity: 1;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  .splide__info {
+    background-color: colors.$red;
+    color: colors.$white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 8px 12px;
+    border-radius: 100px;
+  }
 }

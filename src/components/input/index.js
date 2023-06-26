@@ -10,6 +10,10 @@ import { validate } from 'models';
 import classes from './style.module.scss';
 
 function Input({
+  value,
+  subValue,
+  setValue,
+  setSubValue,
   secondary,
   type,
   id,
@@ -22,8 +26,6 @@ function Input({
 }) {
   const [inputType, setInputType] = useState(type);
   const [seePassword, setSeePassword] = useState(false);
-  const [value, setValue] = useState('');
-  const [subValue, setSubValue] = useState('');
   const [isValid, setIsValid] = useState(false);
   const inputRef = useRef(null);
   const toggleSeePassword = () => {
@@ -135,6 +137,10 @@ function Input({
 }
 
 Input.propTypes = {
+  value: PropTypes.string,
+  subValue: PropTypes.string,
+  setValue: PropTypes.func,
+  setSubValue: PropTypes.func,
   secondary: PropTypes.bool,
   type: PropTypes.string,
   id: PropTypes.string,
@@ -147,6 +153,10 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  value: '',
+  subValue: '',
+  setValue: () => {},
+  setSubValue: () => {},
   secondary: false,
   type: 'text',
   id: '',

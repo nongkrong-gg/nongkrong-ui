@@ -1,0 +1,71 @@
+@use 'utilities/colors';
+
+.container {
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 24px;
+  background: linear-gradient(48deg, #3AB8E0 0%, #8FD7ED 100%);
+  box-shadow: 0px 4px 4px 0px rgba(65, 186, 225, 0.10), 0px 8px 12px 6px rgba(62, 185, 224, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  i {
+    border-radius: 100px;
+    background-color: colors.$white;
+    color: #3AB8E0;
+    font-size: 24px;
+    width: fit-content;
+    padding: 8px;
+  }
+
+  .text-container {
+    color: colors.$white;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: right;
+
+    button {
+      cursor: pointer;
+      border: 0;
+      padding: 8px;
+      border-radius: 100px;
+      background: colors.$white;
+      color: #3AB8E0;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+
+  &.secondary {
+    border-radius: 24px;
+    box-shadow: 0px 4px 4px 0px rgba(6, 106, 132, 0.10), 0px 8px 12px 6px rgba(4, 105, 131, 0.10);
+    background: linear-gradient(48deg, colors.$green 0%, #6FA9B8 100%);
+    box-shadow: 0px 4px 4px 0px rgba(65, 186, 225, 0.10), 0px 8px 12px 6px rgba(62, 185, 224, 0.15);
+
+    i {
+      color: colors.$green;
+    }
+
+    .button-container {
+      button {
+        color: colors.$green;
+      }
+    }
+  }
+}

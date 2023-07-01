@@ -5,6 +5,7 @@ import Input from './input';
 import Button from './button';
 import Carousel from './carousel';
 import CTA from './cta';
+import Toast from './toast';
 
 export {
   Heading,
@@ -14,4 +15,5 @@ export {
   Button,
   Carousel,
   CTA,
+  Toast,
 };

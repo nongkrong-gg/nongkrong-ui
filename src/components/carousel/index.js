@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
@@ -22,6 +23,16 @@ function Carousel({
   activeChar,
   setActiveChar,
 }) {
+  const [finalSeed, setFinalSeed] = useState(seed);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setFinalSeed(seed);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [seed]);
+
   return (
     <Splide
       className={className}
@@ -43,7 +54,7 @@ function Carousel({
     >
       <SplideTrack>
         {Array(NUM_OF_IMAGES).fill().map((_, i) => {
-          const key = `${i}-${seed}`;
+          const key = `${i}-${finalSeed}`;
 
           return (
             <SplideSlide key={key}>

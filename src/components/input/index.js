@@ -10,10 +10,13 @@ import { validate } from 'models';
 import classes from './style.module.scss';
 
 function Input({
+  className,
   value,
   subValue,
+  isValid,
   setValue,
   setSubValue,
+  setIsValid,
   secondary,
   type,
   id,
@@ -26,7 +29,6 @@ function Input({
 }) {
   const [inputType, setInputType] = useState(type);
   const [seePassword, setSeePassword] = useState(false);
-  const [isValid, setIsValid] = useState(false);
   const inputRef = useRef(null);
   const toggleSeePassword = () => {
     setSeePassword((prevState) => !prevState);
@@ -61,14 +63,14 @@ function Input({
   }, []);
 
   return (
-    <div className={classes.input}>
+    <div className={`${classes.input} ${className}`}>
       <input
+        id={id}
         ref={inputRef}
         className={
           `${secondary ? classes.secondary : ''} ${value ? classes.filled : ''} ${validClassName()}`
         }
         type={inputType}
-        id={id}
         name={name}
         placeholder={placeholder}
         value={value}
@@ -137,10 +139,13 @@ function Input({
 }
 
 Input.propTypes = {
+  className: PropTypes.string,
   value: PropTypes.string,
   subValue: PropTypes.string,
+  isValid: PropTypes.bool,
   setValue: PropTypes.func,
   setSubValue: PropTypes.func,
+  setIsValid: PropTypes.func,
   secondary: PropTypes.bool,
   type: PropTypes.string,
   id: PropTypes.string,
@@ -153,10 +158,13 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  className: '',
   value: '',
   subValue: '',
+  isValid: false,
   setValue: () => {},
   setSubValue: () => {},
+  setIsValid: () => {},
   secondary: false,
   type: 'text',
   id: '',

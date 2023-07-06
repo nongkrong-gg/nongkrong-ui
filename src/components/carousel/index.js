@@ -17,12 +17,14 @@ const IMG_URL = (key) => {
 };
 
 function Carousel({
+  className,
   seed,
   activeChar,
   setActiveChar,
 }) {
   return (
     <Splide
+      className={className}
       hasTrack={false}
       onActive={(e) => setActiveChar(e.index + 1)}
       options={{
@@ -64,12 +66,14 @@ function Carousel({
 }
 
 Carousel.propTypes = {
+  className: PropTypes.string,
   seed: PropTypes.string,
   activeChar: PropTypes.number,
   setActiveChar: PropTypes.func,
 };
 
 Carousel.defaultProps = {
+  className: '',
   seed: '',
   activeChar: 1,
   setActiveChar: () => {},

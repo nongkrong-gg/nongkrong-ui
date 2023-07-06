@@ -10,6 +10,9 @@ settings:
     node:
       paths:
         - src
+      moduleDirectory: 
+        - node_modules
+        - src
 rules:
   react/jsx-filename-extension:
     - 1

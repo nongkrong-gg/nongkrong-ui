@@ -9,13 +9,16 @@ export default {
 function InputComponent(props) {
   const [value, setValue] = useState('');
   const [subValue, setSubValue] = useState('');
+  const [isValid, setIsValid] = useState(false);
 
   return (
     <Input
       value={value}
       subValue={subValue}
+      isValid={isValid}
       setValue={setValue}
       setSubValue={setSubValue}
+      setIsValid={setIsValid}
       {...props}
     />
   );

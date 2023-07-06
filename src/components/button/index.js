@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import classes from './style.module.scss';
 
 function Button({
+  className,
   children,
   type,
   onClick,
@@ -23,7 +24,7 @@ function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`${classes.button} ${classes[variant()]}`}
+      className={`${classes.button} ${classes[variant()]} ${className}`}
       disabled={disabled}
     >
       {iconLeft && (
@@ -38,6 +39,7 @@ function Button({
 }
 
 Button.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.any,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   onClick: PropTypes.func,
@@ -50,6 +52,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  className: '',
   children: null,
   type: 'button',
   onClick: () => {},

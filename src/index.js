@@ -1,17 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from 'App.js';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import 'utilities/reset.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '@splidejs/react-splide/dist/css/splide.min.css';
+import '@splidejs/react-splide/css';
 import 'utilities/index.scss';
+import { Registration } from 'pages';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: '/registration',
+    element: (
+      <Registration />
+    ),
+  },
+]);
+
+const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="body-parent">
+      <div className="body">
+        <RouterProvider router={router} />
+      </div>
+    </div>
   </React.StrictMode>,
 );
 

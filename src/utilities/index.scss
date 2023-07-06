@@ -5,6 +5,20 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
+.body-parent {
+  background-color: #f6f9ff;
+  display: flex;
+  justify-content: center;
+
+  .body {
+    position: relative;
+    background-color: colors.$white;
+    width: 480px;
+    min-height: 100vh;
+    padding: 0 16px;
+  }
+}
+
 /* Splide */
 .splide__slide {
   &:focus-visible, &:focus {

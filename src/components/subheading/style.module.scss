@@ -4,5 +4,16 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  color: colors.$gray;
+
+  &.primary {
+    color: colors.$black;
+  }
+
+  &.secondary {
+    color: colors.$white;
+  }
+
+  &.tertiary {
+    color: colors.$gray;
+  }
 }

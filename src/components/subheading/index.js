@@ -3,10 +3,20 @@ import classes from './style.module.scss';
 
 function Subheading({
   className,
+  primary,
+  secondary,
+  tertiary,
   children,
 }) {
+  const variant = () => {
+    if (primary) return 'primary';
+    if (secondary) return 'secondary';
+    if (tertiary) return 'tertiary';
+    return '';
+  };
+
   return (
-    <h3 className={`${classes.h3} ${className}`}>
+    <h3 className={`${classes.h3} ${classes[variant()]} ${className}`}>
       {children}
     </h3>
   );
@@ -14,11 +24,17 @@ function Subheading({
 
 Subheading.propTypes = {
   className: PropTypes.string,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  tertiary: PropTypes.bool,
   children: PropTypes.any,
 };
 
 Subheading.defaultProps = {
   className: '',
+  primary: false,
+  secondary: false,
+  tertiary: false,
   children: null,
 };
 

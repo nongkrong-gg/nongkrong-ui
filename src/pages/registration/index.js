@@ -24,7 +24,7 @@ function Email({ setStep }) {
         {' '}
         wacanamu?
       </Heading>
-      <Subheading className={classes.subheading}>Yuk, bikin akun dulu gais</Subheading>
+      <Subheading className={classes.subheading} tertiary>Yuk, bikin akun dulu gais</Subheading>
       <Input
         className={classes['input-email']}
         type="email"
@@ -44,7 +44,7 @@ function Email({ setStep }) {
       >
         Lanjutkan
       </Button>
-      <Subheading className={`${classes.subheading} ${classes.center}`}>Atau</Subheading>
+      <Subheading className={`${classes.subheading} ${classes.center}`} tertiary>Atau</Subheading>
       <Button
         tertiary
         iconLeft={googlePNG}
@@ -52,7 +52,7 @@ function Email({ setStep }) {
         Gunakan Akun Google
       </Button>
       <div className={classes.footer}>
-        <Subheading className={classes['footer-text']}>Kalau kamu udah punya akun</Subheading>
+        <Subheading className={classes['footer-text']} tertiary>Kalau kamu udah punya akun</Subheading>
         <Button secondary iconRight="right-to-bracket">Login disini</Button>
       </div>
     </>
@@ -136,6 +136,7 @@ function Avatar({ setStep }) {
         <Button
           className={classes['button-create-account']}
           primary
+          disabled={!isUsernameValid}
         >
           Buat akun & karakter
         </Button>

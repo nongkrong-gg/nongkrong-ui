@@ -6,6 +6,7 @@ import Button from './button';
 import Carousel from './carousel';
 import CTA from './cta';
 import Toast from './toast';
+import Pill from './pill';
 import Back from './back';
 
 export {
@@ -17,5 +18,6 @@ export {
   Carousel,
   CTA,
   Toast,
+  Pill,
   Back,
 };

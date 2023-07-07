@@ -23,6 +23,7 @@ root.render(
   <React.StrictMode>
     <div className="body-parent">
       <div className="body">
+        <canvas className="canvas" />
         <RouterProvider router={router} />
       </div>
     </div>

@@ -16,6 +16,17 @@ body {
     width: 480px;
     min-height: 100vh;
     padding: 0 16px;
+
+    &:has(> .primary-background) {
+      background-color: colors.$green;
+    }
+    .canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 

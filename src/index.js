@@ -17,7 +17,7 @@ import {
 } from 'pages';
 import reportWebVitals from './reportWebVitals';
 
-const darkmode = new Darkmode({ autoMatchOsTheme: false });
+const darkmode = new Darkmode();
 
 const router = createBrowserRouter([
   {

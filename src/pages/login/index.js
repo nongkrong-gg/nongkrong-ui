@@ -52,6 +52,7 @@ function Login() {
         className={classes['button-continue']}
         primary
         disabled={!isEmailValid || !isPasswordValid}
+        onClick={() => navigate('/')}
       >
         Lanjutkan
       </Button>

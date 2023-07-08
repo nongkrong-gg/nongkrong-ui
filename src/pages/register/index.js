@@ -173,6 +173,8 @@ function Avatar({
 }
 
 function Success() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const canvas = document.querySelector('.canvas');
     canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true });
@@ -235,6 +237,7 @@ function Success() {
           className={classes['button-create-invitation']}
           primary
           iconRight="calendar-plus"
+          onClick={() => navigate('/wacana')}
         >
           Buat undangan pertamamu
         </Button>

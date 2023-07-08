@@ -18,6 +18,7 @@ function Create() {
   const [isDateValid, setIsDateValid] = useState(false);
   const [time, setTime] = useState('');
   const [isTimeValid, setIsTimeValid] = useState(false);
+
   const navigate = useNavigate();
 
   return (
@@ -71,6 +72,7 @@ function Create() {
         <Button
           primary
           disabled={!isTitleValid || !isDateValid || !isTimeValid}
+          onClick={() => navigate('/success')}
         >
           Bikin Wacana
         </Button>

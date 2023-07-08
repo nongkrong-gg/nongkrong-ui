@@ -52,6 +52,27 @@ function Input({
     inputRef.current.showPicker();
   };
 
+  const onFocus = () => {
+    if (type !== 'date' && type !== 'time') return;
+
+    inputRef.current.type = type;
+    setTimeout(() => {
+      openDatePicker();
+    }, 0);
+  };
+
+  const onBlur = () => {
+    if (type !== 'date' && type !== 'time') return;
+
+    inputRef.current.type = 'text';
+  };
+
+  useEffect(() => {
+    if (type === 'date' || type === 'time') {
+      setInputType('text');
+    }
+  }, [type]);
+
   useEffect(() => {
     setIsValid(false);
     setIsValid(!validate(name, value).error);
@@ -64,7 +85,7 @@ function Input({
   }, []);
 
   return (
-    <div className={`component-input ${secondary ? 'secondary' : ''} ${classes.input} ${className}`}>
+    <div className={`component-input ${secondary ? `secondary ${classes.secondary}` : ''} ${classes.input} ${className}`}>
       <input
         id={id}
         ref={inputRef}
@@ -76,6 +97,8 @@ function Input({
         placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
       {icon && (
         <i className={`fa-solid fa-${icon} ${classes['icon-left']}`} />

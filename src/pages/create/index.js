@@ -53,6 +53,7 @@ function Create() {
           secondary
           type="date"
           name="date"
+          placeholder="Kapan nih?"
           value={date}
           isValid={isDateValid}
           setValue={setDate}
@@ -62,6 +63,7 @@ function Create() {
           secondary
           type="time"
           name="time"
+          placeholder="Jam berapa?"
           value={time}
           isValid={isTimeValid}
           setValue={setTime}

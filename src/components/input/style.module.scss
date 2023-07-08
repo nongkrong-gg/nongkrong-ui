@@ -4,6 +4,8 @@
   position: relative;
 
   input {
+    min-height: 22px;
+    box-sizing:content-box;
     width: calc(100% - 68px);
     padding: 14px 16px;
     padding-left: 48px;
@@ -39,10 +41,6 @@
       & + i {
         color: colors.$form-empty-placeholder;
       }
-    }
-
-    &.secondary {
-      background-color: colors.$form-secondary-bg;
     }
 
     &:focus {
@@ -167,6 +165,12 @@
       i {
         color: colors.$black;
       }
+    }
+  }
+
+  &.secondary {
+    input {
+      background-color: colors.$form-secondary-bg;
     }
   }
 

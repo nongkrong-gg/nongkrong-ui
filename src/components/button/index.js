@@ -24,7 +24,7 @@ function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`${classes.button} ${classes[variant()]} ${className}`}
+      className={`component-button ${variant()} ${classes.button} ${classes[variant()]} ${className}`}
       disabled={disabled}
     >
       {iconLeft && (

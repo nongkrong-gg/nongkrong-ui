@@ -20,6 +20,11 @@ body {
     &:has(> .primary-background) {
       background-color: colors.$green;
     }
+
+    &:has(> .building-background) {
+      background: url('../assets/graphics/building.svg') no-repeat bottom center, colors.$white;
+    }
+
     .canvas {
       position: absolute;
       top: 0;
@@ -29,6 +34,103 @@ body {
     }
   }
 }
+
+/* Dark Mode */
+.darkmode--activated {
+  .body {
+    background-color: transparent;
+
+    &:has(> .primary-background) {
+      background-color: transparent;
+    }
+
+    &:has(> .building-background) {
+      background: url('../assets/graphics/building.svg') no-repeat bottom center;
+    }
+  }
+
+  .logo, .component-heading, .component-subheading, .component-title, .component-back {
+    filter: brightness(0) invert(1);
+  }
+
+  .component-input {
+    input {
+      background-color: colors.$black;
+      border-color: colors.$light-black;
+      color: colors.$white;
+    }
+
+    .input-info {
+      background-color: colors.$light-black; 
+      border-color: colors.$light-black;
+      color: colors.$white;
+    }
+
+    &:has(> .input-info) {
+      background-color: colors.$light-black;
+
+      input {
+        &.empty {
+          border-color: colors.$light-black;
+        }
+      }
+    }
+
+    &.secondary {
+      input {
+        &.empty {
+          border-color: colors.$light-black;
+        }
+      }
+    }
+  }
+
+  .component-button {
+    &.primary {
+      &:disabled {
+        background-color: colors.$light-black;
+        border-color: colors.$light-black;
+      }
+    }
+
+    &.secondary {
+      background-color: colors.$black;
+      border-color: colors.$black;
+      color: colors.$white;
+    }
+
+    &.tertiary {
+      background-color: colors.$black;
+      border-color: colors.$white;
+      color: colors.$white;
+    }
+  }
+
+  .success-container {
+    background-color: colors.$dark-black;
+
+    > div {
+      background-color: colors.$light-black;
+    }
+  }
+
+  .footer {
+    background-color: colors.$black;
+
+    &.white {
+      background-color: colors.$dark-black;
+
+      .component-button {
+        &.secondary {
+          background-color: colors.$dark-black;
+          border-color: colors.$dark-black;
+          color: colors.$white;
+        }
+      }
+    }
+  }
+}
+
 
 /* Splide */
 .splide__slide {

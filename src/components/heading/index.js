@@ -6,7 +6,7 @@ function Heading({
   children,
 }) {
   return (
-    <h1 className={`${classes.h1} ${className}`}>
+    <h1 className={`component-heading ${classes.h1} ${className}`}>
       {children}
     </h1>
   );

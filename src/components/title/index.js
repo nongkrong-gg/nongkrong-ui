@@ -6,7 +6,7 @@ function Title({
   children,
 }) {
   return (
-    <h2 className={`${classes.h2} ${className}`}>{children}</h2>
+    <h2 className={`component-title ${classes.h2} ${className}`}>{children}</h2>
   );
 }
 

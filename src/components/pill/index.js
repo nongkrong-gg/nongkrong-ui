@@ -6,7 +6,7 @@ function Pill({
   children,
 }) {
   return (
-    <div className={`${classes.pill} ${className}`}>
+    <div className={`component-pill ${classes.pill} ${className}`}>
       {children}
     </div>
   );

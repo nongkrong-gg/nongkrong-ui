@@ -16,7 +16,7 @@ function Subheading({
   };
 
   return (
-    <h3 className={`${classes.h3} ${classes[variant()]} ${className}`}>
+    <h3 className={`component-subheading ${classes.h3} ${classes[variant()]} ${className}`}>
       {children}
     </h3>
   );

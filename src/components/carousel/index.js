@@ -35,7 +35,7 @@ function Carousel({
 
   return (
     <Splide
-      className={className}
+      className={`component-carousel ${className}`}
       hasTrack={false}
       onActive={(e) => setActiveChar(e.index + 1)}
       options={{

@@ -1,0 +1,32 @@
+@use 'utilities/colors';
+
+.nav {
+  position: relative;
+  top: 0;
+  left: -16px;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.title {
+  margin-top: 24px;
+  margin-bottom: 4px;
+}
+
+.subheading {
+  margin-bottom: 24px;
+}
+
+.cta-create {
+  margin-bottom: 16px;
+}
+

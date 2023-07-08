@@ -14,7 +14,7 @@ function Back({
 
   return (
     <div
-      className={`${classes.back} ${classes[variant()]}`}
+      className={`component-back ${classes.back} ${classes[variant()]}`}
       onClick={onClick}
     >
       <i className="fa-solid fa-arrow-left" />

@@ -39,8 +39,8 @@ function Input({
     });
   };
   const validClassName = () => {
-    if (isValid) return classes.valid;
-    if (value) return classes.invalid;
+    if (isValid) return 'valid';
+    if (value) return 'invalid';
     return '';
   };
 
@@ -64,12 +64,12 @@ function Input({
   }, []);
 
   return (
-    <div className={`${classes.input} ${className}`}>
+    <div className={`component-input ${secondary ? 'secondary' : ''} ${classes.input} ${className}`}>
       <input
         id={id}
         ref={inputRef}
         className={
-          `${secondary ? classes.secondary : ''} ${value ? classes.filled : ''} ${validClassName()}`
+          `${!value ? 'empty' : ''} ${value ? classes.filled : ''} ${classes[validClassName()]}`
         }
         type={inputType}
         name={name}
@@ -87,7 +87,7 @@ function Input({
             onClick={generateUsername}
           />
           {value && (
-            <div className={classes.toast}>
+            <div className={`input-info ${classes.toast}`}>
               Tenang aja nama bisa diganti sewaktu waktu😊
             </div>
           )}
@@ -120,7 +120,7 @@ function Input({
         </>
       )}
       {(info && !isValid) && (
-        <div className={classes.toast}>
+        <div className={`input-info ${classes.toast}`}>
           {infoIcon && (
             <i className={`fa-solid fa-${infoIcon}`} />
           )}

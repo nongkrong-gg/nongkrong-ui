@@ -62,7 +62,7 @@ function Login() {
       >
         Gunakan Akun Google
       </Button>
-      <div className={classes.footer}>
+      <div className={`footer ${classes.footer}`}>
         <Subheading className={classes['footer-text']} tertiary>Kalau kamu belum punya akun</Subheading>
         <Button
           secondary

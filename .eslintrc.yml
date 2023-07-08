@@ -14,11 +14,17 @@ settings:
         - node_modules
         - src
 rules:
+  import/no-extraneous-dependencies:
+    - error
+    - devDependencies:
+      - '.storybook/**'
+      - 'stories/**' 
   react/jsx-filename-extension:
     - 1
     - extensions:
       - .js
       - .jsx
+  react/destructuring-assignment: off
   react/react-in-jsx-scope: off
   react/jsx-uses-react: off
   react/forbid-prop-types: off
@@ -26,3 +32,5 @@ rules:
   react/jsx-props-no-spreading: off
   jsx-a11y/click-events-have-key-events: off
   jsx-a11y/no-static-element-interactions: off
+  jsx-a11y/no-noninteractive-element-interactions: off
+  jsx-a11y/label-has-associated-control: off

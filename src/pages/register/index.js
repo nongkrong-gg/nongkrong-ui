@@ -60,7 +60,7 @@ function Email({
       >
         Gunakan Akun Google
       </Button>
-      <div className={classes.footer}>
+      <div className={`footer ${classes.footer}`}>
         <Subheading className={classes['footer-text']} tertiary>Kalau kamu udah punya akun</Subheading>
         <Button
           secondary
@@ -157,7 +157,7 @@ function Avatar({
         placeholder="siapa nama kamu?"
         icon="user"
       />
-      <div className={classes.footer}>
+      <div className={`footer ${classes.footer}`}>
         <Button
           className={classes['button-create-account']}
           primary
@@ -212,9 +212,10 @@ function Success() {
 
   return (
     <>
+      <canvas className="canvas" />
       <div className="primary-background" />
       <div className={classes['success-body']}>
-        <div className={classes['success-container']}>
+        <div className={`success-container ${classes['success-container']}`}>
           <Title className={classes.title}>Berhasil buat akun 🎉</Title>
           <div className={classes['avatar-container']}>
             <img
@@ -229,7 +230,7 @@ function Success() {
           </Subheading>
         </div>
       </div>
-      <div className={`${classes.footer} ${classes.white}`}>
+      <div className={`footer white ${classes.footer} ${classes.white}`}>
         <Button
           className={classes['button-create-invitation']}
           primary

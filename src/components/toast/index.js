@@ -32,7 +32,7 @@ function Toast({
         </div>
       )}
       <div
-        className={`${classes.container} ${classes[variant()]}`}
+        className={`component-toast ${classes.container} ${classes[variant()]}`}
         onClick={onClick}
       >
         <div className={classes['title-container']}>

@@ -8,6 +8,7 @@ import CTA from './cta';
 import Toast from './toast';
 import Pill from './pill';
 import Back from './back';
+import Toggle from './toggle';
 
 export {
   Heading,
@@ -20,4 +21,5 @@ export {
   Toast,
   Pill,
   Back,
+  Toggle,
 };

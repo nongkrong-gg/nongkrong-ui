@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import classes from './style.module.scss';
 
 function CTA({
+  className,
   primary,
   secondary,
   icon,
@@ -18,7 +19,7 @@ function CTA({
 
   return (
     <div
-      className={`${classes.container} ${classes[variant()]}`}
+      className={`component-cta ${classes.container} ${classes[variant()]} ${className}`}
       onClick={onClick}
     >
       {icon && (
@@ -36,6 +37,7 @@ function CTA({
 }
 
 CTA.propTypes = {
+  className: PropTypes.string,
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   icon: PropTypes.string,
@@ -46,6 +48,7 @@ CTA.propTypes = {
 };
 
 CTA.defaultProps = {
+  className: '',
   primary: false,
   secondary: false,
   icon: '',

@@ -1,0 +1,86 @@
+@use 'utilities/colors';
+
+.nav {
+  position: relative;
+  top: 0;
+  left: -16px;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+  }
+
+  .right {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: colors.$white;
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    
+    i {
+      font-size: 24px;
+    }
+  }
+}
+
+.success-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .gif-plane {
+    border-radius: 50%;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    margin-bottom: 8px;
+  }
+}
+
+.footer {
+  width: calc(100% - 32px);
+  padding: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &-text {
+    color: colors.$white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .social-media-container {
+    display: flex;
+    justify-content: space-evenly;
+    
+    i {
+      cursor: pointer;
+      font-size: 40px;
+      background-color: colors.$white;
+      padding: 11px;
+      border-radius: 16px;
+      box-shadow: 2px 4px 4px 0px rgba(255, 255, 255, 0.15);
+      color: colors.$green;
+    }
+  }
+}

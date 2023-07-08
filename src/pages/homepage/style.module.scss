@@ -10,10 +10,18 @@
   justify-content: space-between;
   align-items: center;
 
+  .logo {
+    cursor: pointer;
+  }
+
   .right {
     display: flex;
     align-items: center;
     gap: 16px;
+
+    .avatar {
+      cursor: pointer;
+    }
   }
 }
 

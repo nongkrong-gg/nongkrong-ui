@@ -16,7 +16,7 @@ function Homepage() {
       <div className="building-background" />
       <div className={classes.nav}>
         <img
-          className="logo"
+          className={`logo ${classes.logo}`}
           alt="Wacana"
           src={wacanaSVG}
           onClick={() => navigate('/')}
@@ -26,6 +26,7 @@ function Homepage() {
           <img
             alt="avatar"
             src="https://api.dicebear.com/6.x/micah/svg?seed=10-indirect_rose_lark&size=24&backgroundColor=b6e3f4%2Cc0aede%2Cd1d4f9%2Cffd5dc%2Cffdfbf&radius=50"
+            className={classes.avatar}
           />
         </div>
       </div>

@@ -135,6 +135,12 @@ body {
   .footer {
     background-color: colors.$black;
 
+    .social-media-container {
+      i {
+        color: colors.$black;
+      }
+    }
+
     &.white {
       background-color: colors.$dark-black;
 

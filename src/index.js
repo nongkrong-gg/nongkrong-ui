@@ -4,16 +4,22 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import 'utilities/reset.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '@splidejs/react-splide/css';
+import '@splidejs/react-splide/css'; // eslint-disable-line import/no-unresolved
 import 'utilities/index.scss';
-import { Registration } from 'pages';
+import { Register, Login } from 'pages';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
   {
-    path: '/registration',
+    path: '/register',
     element: (
-      <Registration />
+      <Register />
+    ),
+  },
+  {
+    path: '/login',
+    element: (
+      <Login />
     ),
   },
 ]);

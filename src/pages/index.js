@@ -1,5 +1,7 @@
-import Registration from './registration';
+import Register from './register';
+import Login from './login';
 
 export {
-  Registration, // eslint-disable-line import/prefer-default-export
+  Register,
+  Login,
 };

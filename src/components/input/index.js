@@ -26,6 +26,7 @@ function Input({
   info,
   infoInput,
   infoIcon,
+  isValidInfo,
 }) {
   const [inputType, setInputType] = useState(type);
   const [seePassword, setSeePassword] = useState(false);
@@ -110,15 +111,15 @@ function Input({
             className={`fa-solid fa-eye${seePassword ? '' : '-slash'} ${classes['icon-password']}`}
             onClick={toggleSeePassword}
           />
-          {isValid && (
+          {(isValid && isValidInfo) && (
             <div className={`${classes.toast} ${classes.success}`}>
               <i className="fa-solid fa-circle-check" />
-              Passwordmu keliatannya aman!
+              {isValidInfo}
             </div>
           )}
         </>
       )}
-      {info && (
+      {(info && !isValid) && (
         <div className={classes.toast}>
           {infoIcon && (
             <i className={`fa-solid fa-${infoIcon}`} />
@@ -155,6 +156,7 @@ Input.propTypes = {
   info: PropTypes.string,
   infoInput: PropTypes.string,
   infoIcon: PropTypes.string,
+  isValidInfo: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -174,6 +176,7 @@ Input.defaultProps = {
   info: '',
   infoInput: '',
   infoIcon: '',
+  isValidInfo: '',
 };
 
 export default Input;

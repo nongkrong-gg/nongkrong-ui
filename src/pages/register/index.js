@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import googlePNG from 'assets/icons/google.png';
 import {
@@ -21,6 +22,8 @@ function Email({
   setEmail,
   setIsEmailValid,
 }) {
+  const navigate = useNavigate();
+
   return (
     <>
       <Heading className={classes.heading}>
@@ -59,7 +62,13 @@ function Email({
       </Button>
       <div className={classes.footer}>
         <Subheading className={classes['footer-text']} tertiary>Kalau kamu udah punya akun</Subheading>
-        <Button secondary iconRight="right-to-bracket">Login disini</Button>
+        <Button
+          secondary
+          iconRight="right-to-bracket"
+          onClick={() => navigate('/login')}
+        >
+          Login disini
+        </Button>
       </div>
     </>
   );
@@ -91,6 +100,9 @@ function Password({
         setValue={setPassword}
         setIsValid={setIsPasswordValid}
         placeholder="Passwordin yuk, biar aman"
+        info="contoh: W@cana123"
+        infoIcon="file-lines"
+        isValidInfo="Passwordmu keliatannya aman!"
       />
       <Button
         className={classes['button-create-password']}
@@ -231,7 +243,7 @@ function Success() {
   );
 }
 
-function Registration() {
+function Register() {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
@@ -303,4 +315,4 @@ Avatar.propTypes = {
   setActiveChar: PropTypes.func.isRequired,
 };
 
-export default Registration;
+export default Register;

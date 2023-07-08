@@ -1,0 +1,40 @@
+@use 'utilities/colors';
+
+.coffee {
+  margin-top: 77px;
+  margin-bottom: 4px;
+}
+
+.title {
+  margin-bottom: 4px;
+}
+
+.subheading {
+  margin-bottom: 24px;
+}
+
+.input-title {
+  margin-bottom: 16px;
+}
+
+.input-date-time {
+  display: flex;
+  gap: 16px;
+
+  > div {
+    width: 100%;
+  }
+}
+
+.footer {
+  width: calc(100% - 32px);
+  background-color: colors.$white;
+  padding: 16px;
+  padding-top: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  padding: 16px;
+  border-radius: 16px 16px 0px 0px;
+  z-index: 1;
+}

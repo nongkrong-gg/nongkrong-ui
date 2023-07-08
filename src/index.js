@@ -12,6 +12,7 @@ import {
   Register,
   Login,
   Homepage,
+  Create,
 } from 'pages';
 import reportWebVitals from './reportWebVitals';
 
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
     path: '/',
     element: (
       <Homepage />
+    ),
+  },
+  {
+    path: '/wacana',
+    element: (
+      <Create />
     ),
   },
 ]);

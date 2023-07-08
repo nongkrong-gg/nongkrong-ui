@@ -119,14 +119,14 @@ function Input({
           )}
         </>
       )}
-      {(info && !isValid) && (
+      {((info && !isValid) || infoInput) && (
         <div className={`input-info ${classes.toast}`}>
           {infoIcon && (
             <i className={`fa-solid fa-${infoIcon}`} />
           )}
           {infoInput ? (
             <input
-              className={subValue ? classes.filled : ''}
+              className={subValue ? `filled ${classes.filled}` : ''}
               name={infoInput}
               placeholder={info}
               value={subValue}

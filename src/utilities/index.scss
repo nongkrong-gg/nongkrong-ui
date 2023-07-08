@@ -64,6 +64,24 @@ body {
       background-color: colors.$light-black; 
       border-color: colors.$light-black;
       color: colors.$white;
+      
+      input {
+        background-color: colors.$light-black;
+        
+        &::placeholder {
+          color: colors.$gray;
+        }
+      }
+
+      i {
+        color: colors.$gray;
+      }
+
+      &:has(input.filled) {
+        i, input {
+          color: colors.$white;
+        }
+      }
     }
 
     &:has(> .input-info) {

@@ -41,6 +41,7 @@ function Homepage() {
         title="Bikin Wacana"
         description="Tentuin tema acara dan waktunya"
         cta="Tap untuk bikin"
+        onClick={() => navigate('/wacana')}
       />
       <CTA
         secondary

@@ -25,16 +25,3 @@
     width: 100%;
   }
 }
-
-.footer {
-  width: calc(100% - 32px);
-  background-color: colors.$white;
-  padding: 16px;
-  padding-top: 0;
-  position: absolute;
-  left: 0;
-  bottom: 0px;
-  padding: 16px;
-  border-radius: 16px 16px 0px 0px;
-  z-index: 1;
-}

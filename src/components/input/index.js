@@ -90,7 +90,7 @@ function Input({
         id={id}
         ref={inputRef}
         className={
-          `${!value ? 'empty' : ''} ${value ? classes.filled : ''} ${classes[validClassName()]}`
+          `${!value ? 'empty' : ''} ${value ? `filled ${classes.filled}` : ''} ${`${validClassName()} ${classes[validClassName()]}`}`
         }
         type={inputType}
         name={name}

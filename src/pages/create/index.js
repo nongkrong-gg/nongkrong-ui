@@ -23,54 +23,56 @@ function Create() {
 
   return (
     <>
-      <Back onClick={() => navigate('/')} />
-      <img
-        className={classes.coffee}
-        alt="coffee"
-        src={coffeeSVG}
-      />
-      <Title className={classes.title}>Bikin Wacana</Title>
-      <Subheading className={classes.subheading} tertiary>
-        Tentuin temanya apa, tanggal berapa, trus bagikan deh, ke orang yang mau diajak.
-      </Subheading>
-      <Input
-        className={classes['input-title']}
-        type="text"
-        name="title"
-        placeholder="Tema wacananya apa?"
-        info="Tambahin detail (optional)"
-        infoInput="description"
-        infoIcon="file-lines"
-        value={title}
-        subValue={description}
-        isValid={isTitleValid}
-        setValue={setTitle}
-        setSubValue={setDescription}
-        setIsValid={setIsTitleValid}
-      />
-      <div className={classes['input-date-time']}>
-        <Input
-          secondary
-          type="date"
-          name="date"
-          placeholder="Kapan nih?"
-          value={date}
-          isValid={isDateValid}
-          setValue={setDate}
-          setIsValid={setIsDateValid}
+      <div className="content">
+        <Back onClick={() => navigate('/')} />
+        <img
+          className={classes.coffee}
+          alt="coffee"
+          src={coffeeSVG}
         />
+        <Title className={classes.title}>Bikin Wacana</Title>
+        <Subheading className={classes.subheading} tertiary>
+          Tentuin temanya apa, tanggal berapa, trus bagikan deh, ke orang yang mau diajak.
+        </Subheading>
         <Input
-          secondary
-          type="time"
-          name="time"
-          placeholder="Jam berapa?"
-          value={time}
-          isValid={isTimeValid}
-          setValue={setTime}
-          setIsValid={setIsTimeValid}
+          className={classes['input-title']}
+          type="text"
+          name="title"
+          placeholder="Tema wacananya apa?"
+          info="Tambahin detail (optional)"
+          infoInput="description"
+          infoIcon="file-lines"
+          value={title}
+          subValue={description}
+          isValid={isTitleValid}
+          setValue={setTitle}
+          setSubValue={setDescription}
+          setIsValid={setIsTitleValid}
         />
+        <div className={classes['input-date-time']}>
+          <Input
+            secondary
+            type="date"
+            name="date"
+            placeholder="Kapan nih?"
+            value={date}
+            isValid={isDateValid}
+            setValue={setDate}
+            setIsValid={setIsDateValid}
+          />
+          <Input
+            secondary
+            type="time"
+            name="time"
+            placeholder="Jam berapa?"
+            value={time}
+            isValid={isTimeValid}
+            setValue={setTime}
+            setIsValid={setIsTimeValid}
+          />
+        </div>
       </div>
-      <div className={`footer ${classes.footer}`}>
+      <div className="footer">
         <Button
           primary
           disabled={!isTitleValid || !isDateValid || !isTimeValid}

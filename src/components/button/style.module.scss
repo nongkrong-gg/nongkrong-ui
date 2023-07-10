@@ -17,7 +17,7 @@
   &.primary {
     background-color: colors.$button-primary-bg;
     color: colors.$button-primary-text;
-    border: 0;
+    border: colors.$button-primary-bg 1px solid;
   }
 
   &.secondary {

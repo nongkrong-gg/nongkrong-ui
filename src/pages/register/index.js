@@ -26,42 +26,44 @@ function Email({
 
   return (
     <>
-      <Heading className={classes.heading}>
-        Udah siap buat,
-        <br />
-        <strong>Wacanain</strong>
-        {' '}
-        wacanamu?
-      </Heading>
-      <Subheading className={classes.subheading} tertiary>Yuk, bikin akun dulu gais</Subheading>
-      <Input
-        className={classes['input-email']}
-        type="email"
-        name="email"
-        value={email}
-        isValid={isEmailValid}
-        setValue={setEmail}
-        setIsValid={setIsEmailValid}
-        placeholder="email kamu apa?"
-        icon="envelope"
-      />
-      <Button
-        className={classes['button-continue']}
-        primary
-        disabled={!isEmailValid}
-        onClick={() => setStep((prevValue) => prevValue + 1)}
-      >
-        Lanjutkan
-      </Button>
-      <Subheading className={`${classes.subheading} ${classes.center}`} tertiary>Atau</Subheading>
-      <Button
-        tertiary
-        iconLeft={googlePNG}
-      >
-        Gunakan Akun Google
-      </Button>
-      <div className={`footer ${classes.footer}`}>
-        <Subheading className={classes['footer-text']} tertiary>Kalau kamu udah punya akun</Subheading>
+      <div className="content">
+        <Heading className={classes.heading}>
+          Udah siap buat,
+          <br />
+          <strong>Wacanain</strong>
+          {' '}
+          wacanamu?
+        </Heading>
+        <Subheading className={classes.subheading} tertiary>Yuk, bikin akun dulu gais</Subheading>
+        <Input
+          className={classes['input-email']}
+          type="email"
+          name="email"
+          value={email}
+          isValid={isEmailValid}
+          setValue={setEmail}
+          setIsValid={setIsEmailValid}
+          placeholder="email kamu apa?"
+          icon="envelope"
+        />
+        <Button
+          className={classes['button-continue']}
+          primary
+          disabled={!isEmailValid}
+          onClick={() => setStep((prevValue) => prevValue + 1)}
+        >
+          Lanjutkan
+        </Button>
+        <Subheading className={`${classes.subheading} ${classes.center}`} tertiary>Atau</Subheading>
+        <Button
+          tertiary
+          iconLeft={googlePNG}
+        >
+          Gunakan Akun Google
+        </Button>
+      </div>
+      <div className="footer">
+        <Subheading className="footer-text" tertiary>Kalau kamu udah punya akun</Subheading>
         <Button
           secondary
           iconRight="right-to-bracket"
@@ -127,37 +129,39 @@ function Avatar({
 }) {
   return (
     <>
-      <Back primary onClick={() => setStep((prevValue) => prevValue - 1)} />
-      <Heading className={classes.heading}>
-        Terakhir nih,
-        <br />
-        Pilih
-        {' '}
-        <strong>karakter</strong>
-        {' '}
-        dan buat
-        {' '}
-        <strong>namamu</strong>
-      </Heading>
-      <Carousel
-        className={classes.carousel}
-        seed={username}
-        activeChar={activeChar}
-        setActiveChar={setActiveChar}
-      />
-      <Input
-        className={classes['input-username']}
-        value={username}
-        isValid={isUsernameValid}
-        setValue={setUsername}
-        setIsValid={setIsUsernameValid}
-        secondary
-        type="text"
-        name="username"
-        placeholder="siapa nama kamu?"
-        icon="user"
-      />
-      <div className={`footer ${classes.footer}`}>
+      <div className="content">
+        <Back primary onClick={() => setStep((prevValue) => prevValue - 1)} />
+        <Heading className={classes.heading}>
+          Terakhir nih,
+          <br />
+          Pilih
+          {' '}
+          <strong>karakter</strong>
+          {' '}
+          dan buat
+          {' '}
+          <strong>namamu</strong>
+        </Heading>
+        <Carousel
+          className={classes.carousel}
+          seed={username}
+          activeChar={activeChar}
+          setActiveChar={setActiveChar}
+        />
+        <Input
+          className={classes['input-username']}
+          value={username}
+          isValid={isUsernameValid}
+          setValue={setUsername}
+          setIsValid={setIsUsernameValid}
+          secondary
+          type="text"
+          name="username"
+          placeholder="siapa nama kamu?"
+          icon="user"
+        />
+      </div>
+      <div className="footer">
         <Button
           className={classes['button-create-account']}
           primary
@@ -214,25 +218,27 @@ function Success() {
 
   return (
     <>
-      <canvas className="canvas" />
-      <div className="primary-background" />
-      <div className={classes['success-body']}>
-        <div className={`success-container ${classes['success-container']}`}>
-          <Title className={classes.title}>Berhasil buat akun 🎉</Title>
-          <div className={classes['avatar-container']}>
-            <img
-              alt="avatar"
-              src="https://api.dicebear.com/6.x/micah/svg?seed=10-indirect_rose_lark&size=80&backgroundColor=b6e3f4%2Cc0aede%2Cd1d4f9%2Cffd5dc%2Cffdfbf&radius=50"
-            />
-            <Pill>Jhon Bewok</Pill>
+      <div className="content">
+        <canvas className="canvas" />
+        <div className="primary-background" />
+        <div className={classes['success-body']}>
+          <div className={`success-container ${classes['success-container']}`}>
+            <Title className={classes.title}>Berhasil buat akun 🎉</Title>
+            <div className={classes['avatar-container']}>
+              <img
+                alt="avatar"
+                src="https://api.dicebear.com/6.x/micah/svg?seed=10-indirect_rose_lark&size=80&backgroundColor=b6e3f4%2Cc0aede%2Cd1d4f9%2Cffd5dc%2Cffdfbf&radius=50"
+              />
+              <Pill>Jhon Bewok</Pill>
+            </div>
+            <Subheading className={`${classes.subheading} ${classes.center}`} primary>
+              Akun kamu udah jadi nih, sekarang kamu bisa buat undangan,
+              atau akses undangan langsung dari sini 👌
+            </Subheading>
           </div>
-          <Subheading className={`${classes.subheading} ${classes.center}`} primary>
-            Akun kamu udah jadi nih, sekarang kamu bisa buat undangan,
-            atau akses undangan langsung dari sini 👌
-          </Subheading>
         </div>
       </div>
-      <div className={`footer white ${classes.footer} ${classes.white}`}>
+      <div className="footer white">
         <Button
           className={classes['button-create-invitation']}
           primary

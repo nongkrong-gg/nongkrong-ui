@@ -118,6 +118,9 @@
       position: absolute;
       top: 18px;
       right: 16px;
+    }
+
+    &.icon-username, &.icon-password {
       cursor: pointer;
     }
   }

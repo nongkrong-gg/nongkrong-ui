@@ -101,12 +101,15 @@ function Input({
         onBlur={onBlur}
       />
       {icon && (
-        <i className={`fa-solid fa-${icon} ${classes['icon-left']}`} />
+        <i
+          className={`fa-solid fa-${icon} ${classes['icon-left']}`}
+          onClick={() => inputRef.current.focus()}
+        />
       )}
       {name === 'username' && (
         <>
           <i
-            className={`fa-solid fa-dice ${classes['icon-right']}`}
+            className={`fa-solid fa-dice ${classes['icon-right']} ${classes['icon-username']}`}
             onClick={generateUsername}
           />
           {value && (
@@ -119,13 +122,13 @@ function Input({
       {name === 'date' && (
         <i
           className={`fa-solid fa-calendar ${classes['icon-right']}`}
-          onClick={openDatePicker}
+          onClick={() => inputRef.current.focus()}
         />
       )}
       {name === 'time' && (
         <i
           className={`fa-solid fa-clock ${classes['icon-right']}`}
-          onClick={openDatePicker}
+          onClick={() => inputRef.current.focus()}
         />
       )}
       {type === 'password' && (

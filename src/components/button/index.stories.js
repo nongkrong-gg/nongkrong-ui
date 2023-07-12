@@ -32,6 +32,7 @@ export const Tertiary = {
 
 export const Disabled = {
   args: {
+    primary: true,
     disabled: true,
     children: <>Disabled</>,
   },

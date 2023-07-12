@@ -1,5 +1,16 @@
 @use 'utilities/colors';
 
+.toast {
+  &:has(.info-container) {
+    background-color: colors.$form-normal-toast-bg;
+    border-radius: 16px;
+
+    .container {
+      box-shadow: none;
+    }
+  }
+}
+
 .container {
   cursor: pointer;
   padding: 16px;
@@ -94,4 +105,53 @@
   }
 }
 
+.info {
+  &-container {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    background-color: colors.$form-normal-toast-bg;
+    border-radius: 0 0 16px 16px;
 
+    &:has(.info-icon img) {
+      .info-text {
+        position: relative;
+        left: -16px;
+      }
+    }
+  }
+
+  &-icon {
+    img {
+      border: 1px solid colors.$white;
+      border-radius: 50%;
+
+      &:nth-child(1) {
+        z-index: 4;
+        position: relative;
+      }
+      &:nth-child(2) {
+        z-index: 3;
+        position: relative;
+        left: -8px;
+      }
+      &:nth-child(3) {
+        z-index: 2;
+        position: relative;
+        left: -16px;
+      }
+      &:nth-child(4) {
+        z-index: 1;
+        position: relative;
+        left: -24px;
+      }
+    } 
+  }
+
+  &-text {
+    color: colors.$green;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}

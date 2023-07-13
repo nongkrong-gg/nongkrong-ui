@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import {
   Title,
   Toast,
   Button,
+  Modal,
+  Input,
 } from 'components';
 import buildingSVG from 'assets/graphics/building.svg';
 import classes from './style.module.scss';
 
 function Event() {
+  const [isModalCheckInOpen, setIsModalCheckInOpen] = useState(false);
+  const [location, setLocation] = useState('');
+  const [isLocationValid, setIsLocationValid] = useState(false);
+
   return (
     <>
       <div className="content">
@@ -96,11 +103,55 @@ function Event() {
           className={classes['button-accept-invitation']}
           primary
           iconRight="fire"
+          onClick={() => setIsModalCheckInOpen(true)}
         >
           Gaskeun lah
         </Button>
         <Button secondary iconRight="thumbs-down">Skip dulu</Button>
       </div>
+      <Modal
+        isOpen={isModalCheckInOpen}
+        onRequestClose={() => setIsModalCheckInOpen(false)}
+      >
+        <Title className={classes['modal-check-in-title']}>Kamu OTW dari mana?</Title>
+        <Input
+          secondary
+          value={location}
+          isValid={isLocationValid}
+          setValue={setLocation}
+          setIsValid={setIsLocationValid}
+          ignoreValid
+          type="text"
+          name="location"
+          placeholder="Tulis lokasi kamu"
+        />
+        <div className={classes['modal-check-in-button-container']}>
+          <div className={classes['modal-check-in-button']}>
+            <i className="fa-solid fa-map" />
+            <p>Pilih dari map</p>
+          </div>
+          <div className={classes['modal-check-in-button']}>
+            <i className="fa-solid fa-location-crosshairs" />
+            <p>Gunakan Lokasi Saat ini</p>
+          </div>
+        </div>
+        <p className={classes['modal-check-in-info']}>
+          Hasil untuk &quot;Bintaro&quot;
+        </p>
+        <div className={classes['modal-check-in-result']}>
+          {Array(20).fill(0).map((_, index) => (
+            <div key={index}>
+              <p className={classes['modal-check-in-result-title']}>
+                Bintaro Jaya Xchange Mall
+              </p>
+              <p className={classes['modal-check-in-result-description']}>
+                Buolevard Bintaro Jaya Blok. 0-2, Bintaro Jaya Sektor VII,
+                Pondok Jaya, Pondok Aren, Tangerang
+              </p>
+            </div>
+          ))}
+        </div>
+      </Modal>
     </>
   );
 }

@@ -9,8 +9,14 @@ html, body, #root {
   min-height: 100%;
 }
 
+
 body {
   font-family: 'Rubik', sans-serif;
+
+  &.ReactModal__Body--open {
+    height: 100vh;
+    overflow-y: hidden;
+  }
 }
 
 .body-parent {

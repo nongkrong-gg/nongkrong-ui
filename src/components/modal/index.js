@@ -13,13 +13,16 @@ function Modal({
       onRequestClose={onRequestClose}
       style={{
         overlay: {
+          zIndex: 9999,
           backgroundColor: 'rgba(0, 0, 0, 0.40)',
         },
         content: {
           width: 'calc(100vw - 32px)',
+          maxWidth: '480px',
+          left: '50%',
+          transform: 'translate(-50%, 0)',
           height: 'calc(100vh - 40px)',
           border: 0,
-          left: 0,
           borderRadius: '16px 16px 0 0',
           padding: '16px',
         },

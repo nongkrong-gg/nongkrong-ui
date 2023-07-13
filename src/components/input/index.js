@@ -17,6 +17,7 @@ function Input({
   setValue,
   setSubValue,
   setIsValid,
+  ignoreValid,
   secondary,
   type,
   id,
@@ -39,6 +40,7 @@ function Input({
     });
   };
   const validClassName = () => {
+    if (ignoreValid) return '';
     if (isValid) return 'valid';
     if (value) return 'invalid';
     return '';
@@ -90,7 +92,7 @@ function Input({
         id={id}
         ref={inputRef}
         className={
-          `${!value ? 'empty' : ''} ${value ? `filled ${classes.filled}` : ''} ${`${validClassName()} ${classes[validClassName()]}`}`
+          `${!value ? 'empty' : ''} ${value ? `filled ${classes.filled}` : ''} ${validClassName()} ${classes[validClassName()]}`
         }
         type={inputType}
         name={name}
@@ -173,6 +175,7 @@ Input.propTypes = {
   setValue: PropTypes.func,
   setSubValue: PropTypes.func,
   setIsValid: PropTypes.func,
+  ignoreValid: PropTypes.bool,
   secondary: PropTypes.bool,
   type: PropTypes.string,
   id: PropTypes.string,
@@ -193,6 +196,7 @@ Input.defaultProps = {
   setValue: () => {},
   setSubValue: () => {},
   setIsValid: () => {},
+  ignoreValid: false,
   secondary: false,
   type: 'text',
   id: '',

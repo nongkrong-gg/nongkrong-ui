@@ -1,8 +1,12 @@
 @use 'utilities/colors';
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
-html, body, #root, .body-parent {
+html, body, #root {
   height: 100%;
+}
+
+.body-parent, .body {
+  min-height: 100%;
 }
 
 body {
@@ -44,7 +48,9 @@ body {
     }
 
     .content {
-      height: 100%;
+      &:has(.canvas) {
+        height: 100%;
+      }
     }
 
     .footer {
@@ -171,6 +177,24 @@ body {
     }
   }
 
+  .component-toast {
+    &.primary {
+      > div {
+        &:nth-child(1) {
+          background: linear-gradient(10deg, colors.$dark-black 0%, colors.$light-black 100%);
+          color: colors.$white;
+        }
+        &:nth-child(2) {
+          > div {
+            &:nth-child(2) {
+              color: colors.$light-black;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .success-container {
     background-color: colors.$dark-black;
 
@@ -205,72 +229,126 @@ body {
       }
     }
   }
+
+  .event {
+    &-username {
+      color: colors.$white !important;
+    }
+
+    &-description {
+      color: colors.$white !important;
+      border-color: colors.$white !important;
+    }
+
+    &-toast {
+      color: colors.$black !important;
+    }
+
+    &-map-description {
+      background-color: colors.$dark-black !important;
+      color: colors.$white !important;
+    }
+
+    &-map-recommendation-container {
+      background-color: colors.$dark-black !important;
+
+      p {
+        color: colors.$white !important;
+      }
+    }
+  }
 }
 
 
 /* Splide */
-.splide__slide {
-  &:focus-visible, &:focus {
-    outline: none !important;
-  }
-
-  img {
-    &:focus-visible {
+.map-recommendations {
+  .splide__slide {
+    &:focus-visible, &:focus {
       outline: none !important;
+    }
+
+    img {
+      &:focus-visible {
+        outline: none !important;
+      }
+    }
+
+    &.is-active {
+      border: 0 !important;
+    }
+  }
+  .splide__track--nav {
+    >.splide__list {
+      >.splide__slide {
+        border: 0 !important;
+      }
+    }
+  }
+}
+.component-carousel {
+  .splide__slide {
+    &:focus-visible, &:focus {
+      outline: none !important;
+    }
+
+    img {
+      &:focus-visible {
+        outline: none !important;
+      }
+    }
+
+    &.is-active {
+      border: 3px solid transparent !important;
+    }
+
+    &:not(.is-active) {
+      filter: grayscale(100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
     }
   }
 
-  &.is-active {
-    border: 3px solid transparent !important;
+  .splide__track {
+    min-height: 166px;
   }
 
-  &:not(.is-active) {
-    filter: grayscale(100%);
+  .splide__arrows {
+    position: relative;
+    margin-top: 24px;
+    width: 100%;
     display: flex;
+    gap: 16px;
     justify-content: center;
     align-items: center;
 
-    img {
-      width: 120px;
-      height: 120px;
+    .splide__arrow {
+      position: relative;
+      left: 0;
+      right: 0;
+      transform: none;
+      background-color: colors.$green;
+      color: colors.$white;
+      opacity: 1;
+
+      &:focus {
+        outline: none !important;
+      }
     }
-  }
-}
 
-.splide__track {
-  min-height: 166px;
-}
-
-.splide__arrows {
-  position: relative;
-  margin-top: 24px;
-  width: 100%;
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-
-  .splide__arrow {
-    position: relative;
-    left: 0;
-    right: 0;
-    transform: none;
-    background-color: colors.$green;
-    color: colors.$white;
-    opacity: 1;
-
-    &:focus {
-      outline: none !important;
+    .splide__info {
+      background-color: colors.$red;
+      color: colors.$white;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      padding: 8px 12px;
+      border-radius: 100px;
     }
-  }
-
-  .splide__info {
-    background-color: colors.$red;
-    color: colors.$white;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    padding: 8px 12px;
-    border-radius: 100px;
   }
 }

@@ -51,6 +51,7 @@ function Homepage() {
         title="Checkin"
         description="Udah diundang? yuk konfirmasi"
         cta="Tap untuk Checkin"
+        onClick={() => navigate('/wacana/123')}
       />
     </>
   );

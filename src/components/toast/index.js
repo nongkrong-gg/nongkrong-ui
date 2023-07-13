@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import classes from './style.module.scss';
 
 function Toast({
+  className,
   primary,
   secondary,
   tertiary,
@@ -33,7 +34,7 @@ function Toast({
           <div className={`${classes.container} ${classes[variant()]}`} />
         </div>
       )}
-      <div className={`component-toast ${classes.toast}`}>
+      <div className={`component-toast ${variant()} ${classes.toast} ${className}`}>
         <div
           className={`${classes.container} ${classes[variant()]}`}
           onClick={onClick}
@@ -82,6 +83,7 @@ function Toast({
 }
 
 Toast.propTypes = {
+  className: PropTypes.string,
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   tertiary: PropTypes.bool,
@@ -97,6 +99,7 @@ Toast.propTypes = {
 };
 
 Toast.defaultProps = {
+  className: '',
   primary: false,
   secondary: false,
   tertiary: false,

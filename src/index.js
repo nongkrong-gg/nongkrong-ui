@@ -14,6 +14,7 @@ import {
   Homepage,
   Create,
   Success,
+  Event,
 } from 'pages';
 import reportWebVitals from './reportWebVitals';
 
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
     path: '/success',
     element: (
       <Success />
+    ),
+  },
+  {
+    path: '/wacana/:event_id',
+    element: (
+      <Event />
     ),
   },
 ]);

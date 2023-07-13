@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Modal from 'react-modal';
 import Darkmode from 'darkmode-js';
 import 'normalize.css/normalize.css';
 import 'utilities/reset.css';
@@ -18,6 +19,7 @@ import {
 } from 'pages';
 import reportWebVitals from './reportWebVitals';
 
+Modal.setAppElement('#root');
 const darkmode = new Darkmode({ autoMatchOsTheme: false });
 
 const router = createBrowserRouter([

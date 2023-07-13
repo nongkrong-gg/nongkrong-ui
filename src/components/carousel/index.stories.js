@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input } from 'components/index';
+import { Input } from 'components';
 import Carousel from './index';
 
 export default {
@@ -9,6 +9,7 @@ export default {
 
 function CarouselComponent() {
   const [value, setValue] = useState('');
+  const [isValid, setIsValid] = useState(false);
   const [activeChar, setActiveChar] = useState(1);
 
   return (
@@ -21,7 +22,9 @@ function CarouselComponent() {
       <div style={{ height: '48px' }} />
       <Input
         value={value}
+        isValid={isValid}
         setValue={setValue}
+        setIsValid={setIsValid}
         secondary
         type="text"
         name="username"

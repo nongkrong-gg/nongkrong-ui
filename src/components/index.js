@@ -9,6 +9,7 @@ import Toast from './toast';
 import Pill from './pill';
 import Back from './back';
 import Toggle from './toggle';
+import Modal from './modal';
 
 export {
   Heading,
@@ -22,4 +23,5 @@ export {
   Pill,
   Back,
   Toggle,
+  Modal,
 };

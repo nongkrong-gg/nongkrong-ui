@@ -12,6 +12,7 @@ const password = Joi.string()
 const date = Joi.date().greater('now').required();
 const time = Joi.string().regex(/^([0-9]{2}):([0-9]{2})$/);
 const title = Joi.string().min(3).max(30).required();
+const location = Joi.string();
 
 const models = {
   email,
@@ -20,6 +21,7 @@ const models = {
   date,
   time,
   title,
+  location,
 };
 
 // eslint-disable-next-line

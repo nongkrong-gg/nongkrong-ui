@@ -154,6 +154,7 @@
       justify-content: flex-end;
       gap: 16px;
       margin-top: 16px;
+      flex-flow: wrap;
     }
 
     &-button {
@@ -164,6 +165,7 @@
       padding: 8px 16px;
       border-radius: 100px;
       border: 1px solid colors.$green;
+      white-space: nowrap;
 
       i {
         font-size: 12px;

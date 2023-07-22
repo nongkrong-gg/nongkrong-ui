@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { DarkModeContext } from 'contexts';
 import {
   Title,
   Toast,
@@ -8,9 +9,11 @@ import {
   Input,
 } from 'components';
 import buildingSVG from 'assets/graphics/building.svg';
+import buildingNightSVG from 'assets/graphics/building-night.svg';
 import classes from './style.module.scss';
 
 function Event() {
+  const darkmode = useContext(DarkModeContext);
   const [isModalCheckInOpen, setIsModalCheckInOpen] = useState(false);
   const [location, setLocation] = useState('');
   const [isLocationValid, setIsLocationValid] = useState(false);
@@ -96,7 +99,13 @@ function Event() {
             </SplideSlide>
           ))}
         </Splide>
-        <img className={classes.building} src={buildingSVG} alt="building" />
+        {
+          darkmode.isActivated() ? (
+            <img className={classes.building} src={buildingNightSVG} alt="building" />
+          ) : (
+            <img className={classes.building} src={buildingSVG} alt="building" />
+          )
+        }
       </div>
       <div className="footer white">
         <Button
@@ -125,7 +134,7 @@ function Event() {
           name="location"
           placeholder="Tulis lokasi kamu"
         />
-        <div className={classes['modal-check-in-button-container']}>
+        <div className={`${classes['modal-check-in-button-container']} button-container`}>
           <div className={classes['modal-check-in-button']}>
             <i className="fa-solid fa-map" />
             <p>Pilih dari map</p>
@@ -141,7 +150,7 @@ function Event() {
         <div className={classes['modal-check-in-result']}>
           {Array(20).fill(0).map((_, index) => (
             <div key={index}>
-              <p className={classes['modal-check-in-result-title']}>
+              <p className={`${classes['modal-check-in-result-title']} result-title`}>
                 Bintaro Jaya Xchange Mall
               </p>
               <p className={classes['modal-check-in-result-description']}>

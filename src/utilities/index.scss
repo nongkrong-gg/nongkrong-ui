@@ -42,7 +42,10 @@ body {
     }
 
     &:has(.building-background) {
-      background: url('../assets/graphics/building.svg') no-repeat bottom center, colors.$white;
+      background: url('../assets/graphics/building.svg') no-repeat center bottom -98.64px;
+      background-size: contain;
+      -webkit-transition: background-image 0.5s ease-in-out;
+      transition: background-image 0.5s ease-in-out;
     }
 
     .canvas {
@@ -96,7 +99,10 @@ body {
     }
 
     &:has(.building-background) {
-      background: url('../assets/graphics/building.svg') no-repeat bottom center;
+      background: url('../assets/graphics/building-night.svg') no-repeat center bottom -98.64px;
+      background-size: contain;
+      -webkit-transition: background-image 0.5s ease-in-out;
+      transition: background-image 0.5s ease-in-out;
     }
   }
 
@@ -355,6 +361,47 @@ body {
       line-height: 20px;
       padding: 8px 12px;
       border-radius: 100px;
+    }
+  }
+}
+
+/* React Modal */
+.ReactModal__Overlay {
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.40) !important;
+}
+
+.ReactModal__Content {
+  width: calc(100vw - 32px);
+  max-width: 480px;
+  left: 50% !important;
+  transform: translate(-50%, 0);
+  height: calc(100vh - 40px);
+  border: 0 !important;
+  border-radius: 16px 16px 0 0 !important;
+  padding: 16px !important;
+}
+
+.darkmode--activated {
+  .ReactModal__Content {
+    background-color: colors.$dark-black !important;
+
+    .fa-solid.fa-xmark {
+      color: colors.$white;
+    }
+
+    .button-container {
+      > div {
+        border-color: colors.$white;
+
+        i, p {
+          color: colors.$white;
+        }
+      }
+    }
+
+    .result-title {
+      color: colors.$white;
     }
   }
 }

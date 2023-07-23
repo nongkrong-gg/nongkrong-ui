@@ -30,10 +30,27 @@ export const Tertiary = {
   },
 };
 
+export const Quaternary = {
+  args: {
+    quaternary: true,
+    children: <>Buat Reminder</>,
+    iconRight: 'calendar-plus',
+  },
+};
+
 export const Disabled = {
   args: {
     primary: true,
     disabled: true,
     children: <>Disabled</>,
+  },
+};
+
+export const Small = {
+  args: {
+    quaternary: true,
+    small: true,
+    children: <>Edit</>,
+    iconRight: 'pen-to-square',
   },
 };

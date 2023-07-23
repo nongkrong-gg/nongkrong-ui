@@ -3,6 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { DarkModeContext } from 'contexts';
 import {
   Title,
+  Subheading,
   Toast,
   Button,
   Modal,
@@ -15,8 +16,19 @@ import classes from './style.module.scss';
 function Event() {
   const darkmode = useContext(DarkModeContext);
   const [isModalCheckInOpen, setIsModalCheckInOpen] = useState(false);
+  const [isModalConfirmOpen, setIsModalConfirmOpen] = useState(false);
   const [location, setLocation] = useState('');
   const [isLocationValid, setIsLocationValid] = useState(false);
+
+  const openCheckInModal = () => {
+    setIsModalConfirmOpen(false);
+    setIsModalCheckInOpen(true);
+  };
+
+  const openConfirmModal = () => {
+    setIsModalCheckInOpen(false);
+    setIsModalConfirmOpen(true);
+  };
 
   return (
     <>
@@ -112,7 +124,7 @@ function Event() {
           className={classes['button-accept-invitation']}
           primary
           iconRight="fire"
-          onClick={() => setIsModalCheckInOpen(true)}
+          onClick={openCheckInModal}
         >
           Gaskeun lah
         </Button>
@@ -120,7 +132,7 @@ function Event() {
       </div>
       <Modal
         isOpen={isModalCheckInOpen}
-        onRequestClose={() => setIsModalCheckInOpen(false)}
+        onRequestClose={openCheckInModal}
       >
         <Title className={classes['modal-check-in-title']}>Kamu OTW dari mana?</Title>
         <Input
@@ -147,7 +159,7 @@ function Event() {
         <p className={classes['modal-check-in-info']}>
           Hasil untuk &quot;Bintaro&quot;
         </p>
-        <div className={classes['modal-check-in-result']}>
+        <div className={classes['modal-check-in-result']} onClick={openConfirmModal}>
           {Array(20).fill(0).map((_, index) => (
             <div key={index}>
               <p className={`${classes['modal-check-in-result-title']} result-title`}>
@@ -160,6 +172,42 @@ function Event() {
             </div>
           ))}
         </div>
+      </Modal>
+      <Modal
+        isOpen={isModalConfirmOpen}
+        onRequestClose={() => setIsModalConfirmOpen(false)}
+        fitContent
+      >
+        <div className={classes['modal-confirm-header']}>
+          <div>
+            <Title>Pastiin lagi ya</Title>
+            <Subheading tertiary>
+              Lokasi yang kamu pilih bakal nentuin lokasi wacana nantinya.
+            </Subheading>
+          </div>
+          <Button
+            quaternary
+            small
+            iconRight="pen-to-square"
+            onClick={openCheckInModal}
+          >
+            Edit
+          </Button>
+        </div>
+        <div className={classes['modal-confirm-location']}>
+          <i className="fa-solid fa-location-dot" />
+          <div>
+            <p>Bintaro Jaya Xchange Mall</p>
+            <p>
+              Buolevard Bintaro Jaya Blok. 0-2, Bintaro Jaya Sektor VII,
+              Pondok Jaya, Pondok Aren, Tangerang
+            </p>
+          </div>
+        </div>
+        <Subheading tertiary className={classes['modal-confirm-subtitle']}>
+          Lokasi yang kamu pilih bakal nentuin lokasi wacana nantinya.
+        </Subheading>
+        <Button primary iconRight="thumbs-up">Yakin dong</Button>
       </Modal>
     </>
   );

@@ -9,6 +9,8 @@ function Button({
   primary,
   secondary,
   tertiary,
+  quaternary,
+  small,
   disabled,
   iconLeft,
   iconRight,
@@ -17,6 +19,7 @@ function Button({
     if (primary) return 'primary';
     if (secondary) return 'secondary';
     if (tertiary) return 'tertiary';
+    if (quaternary) return 'quaternary';
     return '';
   };
 
@@ -24,7 +27,9 @@ function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`component-button ${variant()} ${classes.button} ${classes[variant()]} ${className}`}
+      className={
+        `component-button ${variant()} ${small ? classes.small : ''} ${classes.button} ${classes[variant()]} ${className}`
+      }
       disabled={disabled}
     >
       {iconLeft && (
@@ -46,6 +51,8 @@ Button.propTypes = {
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   tertiary: PropTypes.bool,
+  quaternary: PropTypes.bool,
+  small: PropTypes.bool,
   disabled: PropTypes.bool,
   iconLeft: PropTypes.string,
   iconRight: PropTypes.string,
@@ -59,6 +66,8 @@ Button.defaultProps = {
   primary: false,
   secondary: false,
   tertiary: false,
+  quaternary: false,
+  small: false,
   disabled: false,
   iconLeft: '',
   iconRight: '',

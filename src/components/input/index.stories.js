@@ -76,6 +76,7 @@ export const Date = {
       secondary
       type="date"
       name="date"
+      placeholder="Kapan nih?"
     />
   ),
 };
@@ -86,6 +87,7 @@ export const Time = {
       secondary
       type="time"
       name="time"
+      placeholder="Jam berapa?"
     />
   ),
 };

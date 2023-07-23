@@ -182,6 +182,12 @@ body {
       border-color: colors.$white;
       color: colors.$white;
     }
+
+    &.quaternary {
+      background-color: colors.$white;
+      border-color: colors.$white;
+      color: colors.$black;
+    }
   }
 
   .component-toast {
@@ -213,6 +219,28 @@ body {
   .success-share-link {
     background-color: colors.$white !important;
     color: colors.$black !important;
+  }
+
+  .success-date-container {
+    background-color: colors.$dark-black !important;
+
+    > div {
+      > div {
+        &:first-child {
+          background: colors.$dark-black !important;
+        }
+
+        &:last-child {
+          background: colors.$light-black !important;
+
+          > div {
+            &:last-child {
+              color: colors.$white !important;
+            }
+          }
+        }
+      }
+    }
   }
 
   .footer {

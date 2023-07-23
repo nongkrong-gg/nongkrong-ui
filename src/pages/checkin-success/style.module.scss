@@ -1,0 +1,125 @@
+@use 'utilities/colors';
+
+.nav {
+  position: relative;
+  top: 0;
+  left: -16px;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+  }
+
+  .right {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: colors.$white;
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    
+    i {
+      font-size: 24px;
+    }
+  }
+}
+
+.success-container {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .gif-clap {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+
+  .subheading {
+    margin-bottom: 24px;
+  }
+
+  .date-container {
+    border-radius: 16px;
+    background: colors.$white;
+    width: calc(100% - 32px);
+    padding: 16px;
+
+    > div {
+      background-color: transparent;
+
+      > div {
+        background: transparent;
+        color: colors.$green;
+        padding: 0;
+
+        &:first-child {
+          margin-bottom: 16px;
+
+          p {
+            font-weight: 500;
+          }
+        }
+
+        &:last-child {
+          padding: 8px;
+          border-radius: 100px;
+          background: colors.$light-blue;
+          margin-bottom: 24px;
+
+          > div {
+            &:last-child {
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  > div {
+    display: flex;
+    gap: 8px;
+    border-radius: 16px;
+    background: colors.$light-blue;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+
+    i {
+      color: colors.$green;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    p {
+      color: colors.$green;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import {
   Modal,
   Input,
 } from 'components';
+import CheckInSuccess from 'pages/checkin-success';
 import buildingSVG from 'assets/graphics/building.svg';
 import buildingNightSVG from 'assets/graphics/building-night.svg';
 import classes from './style.module.scss';
@@ -19,6 +20,7 @@ function Event() {
   const [isModalConfirmOpen, setIsModalConfirmOpen] = useState(false);
   const [location, setLocation] = useState('');
   const [isLocationValid, setIsLocationValid] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const openCheckInModal = () => {
     setIsModalConfirmOpen(false);
@@ -30,7 +32,7 @@ function Event() {
     setIsModalConfirmOpen(true);
   };
 
-  return (
+  return success ? <CheckInSuccess /> : (
     <>
       <div className="content">
         <div className={classes.nav}>
@@ -208,7 +210,7 @@ function Event() {
         <Subheading tertiary className={classes['modal-confirm-subtitle']}>
           Lokasi yang kamu pilih bakal nentuin lokasi wacana nantinya.
         </Subheading>
-        <Button primary iconRight="thumbs-up">Yakin dong</Button>
+        <Button primary iconRight="thumbs-up" onClick={() => setSuccess(true)}>Yakin dong</Button>
       </Modal>
     </>
   );

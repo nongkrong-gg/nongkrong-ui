@@ -2,7 +2,7 @@ import Register from './register';
 import Login from './login';
 import Homepage from './homepage';
 import Create from './create';
-import Success from './success';
+import CreateSuccess from './create-success';
 import Event from './event';
 
 export {
@@ -10,6 +10,6 @@ export {
   Login,
   Homepage,
   Create,
-  Success,
+  CreateSuccess,
   Event,
 };

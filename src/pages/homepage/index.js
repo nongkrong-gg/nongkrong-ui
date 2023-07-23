@@ -43,7 +43,7 @@ function Homepage() {
         title="Bikin Wacana"
         description="Tentuin tema acara dan waktunya"
         cta="Tap untuk bikin"
-        onClick={() => navigate('/wacana')}
+        onClick={() => navigate('/create')}
       />
       <CTA
         secondary
@@ -51,7 +51,7 @@ function Homepage() {
         title="Checkin"
         description="Udah diundang? yuk konfirmasi"
         cta="Tap untuk Checkin"
-        onClick={() => navigate('/wacana/123')}
+        onClick={() => navigate('/123')}
       />
     </>
   );

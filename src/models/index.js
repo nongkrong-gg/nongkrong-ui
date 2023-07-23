@@ -1,5 +1,8 @@
 import Joi from 'joi';
 
+const jsDate = new Date();
+const yesterday = jsDate.setDate(jsDate.getDate() - 1);
+
 const email = Joi.string()
   .email({ tlds: false })
   .required();
@@ -9,7 +12,7 @@ const username = Joi.string()
 const password = Joi.string()
   .pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
   .required();
-const date = Joi.date().greater('now').required();
+const date = Joi.date().min(yesterday).required();
 const time = Joi.string().regex(/^([0-9]{2}):([0-9]{2})$/);
 const title = Joi.string().min(3).max(30).required();
 const location = Joi.string();

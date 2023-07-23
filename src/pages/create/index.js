@@ -7,6 +7,7 @@ import {
   Input,
   Button,
 } from 'components';
+import CreateSuccess from 'pages/create-success';
 import coffeeSVG from 'assets/graphics/coffee.svg';
 import classes from './style.module.scss';
 
@@ -18,10 +19,11 @@ function Create() {
   const [isDateValid, setIsDateValid] = useState(false);
   const [time, setTime] = useState('');
   const [isTimeValid, setIsTimeValid] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
 
-  return (
+  return success ? <CreateSuccess /> : (
     <>
       <div className="content">
         <Back onClick={() => navigate('/')} />
@@ -76,7 +78,7 @@ function Create() {
         <Button
           primary
           disabled={!isTitleValid || !isDateValid || !isTimeValid}
-          onClick={() => navigate('/success')}
+          onClick={() => setSuccess(true)}
         >
           Bikin Wacana
         </Button>

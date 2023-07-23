@@ -264,6 +264,19 @@ body {
       }
     }
   }
+
+  .ReactModal__Content {
+    &:has(.fit-content) {
+      .fa-solid.fa-xmark {
+        background-color: colors.$dark-black;
+      }
+    }
+    .modal-confirm-edit-button {
+      background-color: colors.$dark-black;
+      color: colors.$white;
+      border-color: colors.$white;
+    }
+  }
 }
 
 

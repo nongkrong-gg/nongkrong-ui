@@ -190,6 +190,7 @@ function Event() {
             small
             iconRight="pen-to-square"
             onClick={openCheckInModal}
+            className="modal-confirm-edit-button"
           >
             Edit
           </Button>

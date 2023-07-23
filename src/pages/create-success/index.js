@@ -8,7 +8,7 @@ import wacanaSVG from 'assets/graphics/wacana.svg';
 import planeGIF from 'assets/graphics/plane.gif';
 import classes from './style.module.scss';
 
-function Success() {
+function CreateSuccess() {
   const navigate = useNavigate();
 
   return (
@@ -62,4 +62,4 @@ function Success() {
   );
 }
 
-export default Success;
+export default CreateSuccess;

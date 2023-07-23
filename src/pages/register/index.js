@@ -243,7 +243,7 @@ function Success() {
           className={classes['button-create-invitation']}
           primary
           iconRight="calendar-plus"
-          onClick={() => navigate('/wacana')}
+          onClick={() => navigate('/create')}
         >
           Buat undangan pertamamu
         </Button>

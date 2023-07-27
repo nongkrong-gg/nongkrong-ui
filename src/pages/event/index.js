@@ -134,7 +134,7 @@ function Event() {
       </div>
       <Modal
         isOpen={isModalCheckInOpen}
-        onRequestClose={openCheckInModal}
+        onRequestClose={() => setIsModalCheckInOpen(false)}
       >
         <Title className={classes['modal-check-in-title']}>Kamu OTW dari mana?</Title>
         <Input
